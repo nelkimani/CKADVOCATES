@@ -1,4 +1,4 @@
-/* Shared behaviour: menu, copy buttons, reveals, enquiry form. */
+/* Shared behaviour: menu, copy buttons, enquiry form. */
 (function () {
   var burger = document.getElementById("burger");
   var nav = document.getElementById("nav");
@@ -26,13 +26,6 @@
     catch (err) { fallback(); }
   });
 
-  var reveals = document.querySelectorAll("[data-reveal]");
-  if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (ents) {
-      ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
-    }, { threshold: 0.12 });
-    reveals.forEach(function (el) { io.observe(el); });
-  } else reveals.forEach(function (el) { el.classList.add("in"); });
 
   var form = document.getElementById("enquiry");
   if (!form) return;
