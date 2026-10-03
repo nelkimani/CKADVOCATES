@@ -644,3 +644,27 @@ input:focus, textarea:focus { border-color: var(--blue-700); }
 body { margin: 0; }
 .site-footer a.btn { padding: 9px 20px; color: var(--blue-900); }
 .site-footer a.btn:hover { color: var(--blue-900); }
+
+/* ---------- Logo ---------- */
+.logo-mark { flex: none; display: block; height: 50px; width: auto; }
+.site-header .brand, .site-footer .brand { gap: 14px; }
+.site-footer .logo-mark { height: 64px; }
+.bar { min-height: 80px; }
+
+/* Hero: full lockup sits on the blue, no frame */
+.hero-plate { display: grid; place-items: center; border-left: 0 !important; padding: clamp(24px, 4vw, 56px);
+  background: radial-gradient(ellipse at 50% 45%, rgba(255,255,255,.10), rgba(255,255,255,0) 68%); }
+.hero-plate img { display: block; width: auto; height: auto; max-width: min(100%, 420px); max-height: 460px; filter: drop-shadow(0 10px 30px rgba(5,15,40,.35)); }
+@media (max-width: 900px) { .hero-plate { min-height: 0; padding-block: 8px 56px; border-top: 0 !important; } .hero-plate img { max-height: 300px; } }
+
+/* Inner page headers: faint lockup watermark on the right */
+.page-head { position: relative; overflow: hidden; }
+.page-head::after { content: ""; position: absolute; right: clamp(16px, 6vw, 96px); top: 50%; width: 230px; height: 260px; transform: translateY(-50%);
+  background: url("logo-full.svg") center / contain no-repeat; opacity: .16; pointer-events: none; }
+.page-head > .wrap { position: relative; z-index: 1; }
+@media (max-width: 700px) { .page-head::after { width: 150px; height: 170px; right: -10px; opacity: .1; } }
+@media (max-width: 600px) { .logo-mark { height: 44px; } }
+.logo-mark { height: 58px; }
+.bar { min-height: 88px; }
+.site-footer .logo-mark { height: 84px; }
+@media (max-width: 600px) { .logo-mark { height: 48px; } }
