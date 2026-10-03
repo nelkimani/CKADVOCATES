@@ -423,3 +423,57 @@ section { padding-block: clamp(88px, 12vw, 168px); }
 @media (max-width: 900px) {
   .prow { grid-template-columns: minmax(0, 1fr); gap: 8px; padding-block: 28px; }
 }
+
+/* ---------- White pass: light pages, navy used only for buttons and small details ---------- */
+:root {
+  --bg: #FEFDFB;
+  --surface: #FFFFFF;
+  --stone: #F5F2EB;
+  --ink: #1B1D21;
+  --muted: #5B6068;
+  --line: #E6E1D6;
+  --band: #FEFDFB;
+  --band-2: #F7F4EE;
+  --band-ink: #1B1D21;
+  --band-muted: #5B6068;
+  --band-line: #E6E1D6;
+  --band-accent: #7A5C30;
+  --band-btn: #0E1B2C;
+  --band-btn-ink: #FFFFFF;
+  --ridge: #2B2A27;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --band: #070F19; --band-2: #0E1B2C; --band-ink: #EDE8DD; --band-muted: #9BA7B5;
+    --band-line: rgba(237, 232, 221, 0.16); --band-accent: #C7A872; --band-btn: #C7A872; --band-btn-ink: #0E1B2C; --ridge: #EFEAE0;
+  }
+}
+:root[data-theme="dark"] {
+  --band: #070F19; --band-2: #0E1B2C; --band-ink: #EDE8DD; --band-muted: #9BA7B5;
+  --band-line: rgba(237, 232, 221, 0.16); --band-accent: #C7A872; --band-btn: #C7A872; --band-btn-ink: #0E1B2C; --ridge: #EFEAE0;
+}
+.on-band .btn-primary { background: var(--band-btn); color: var(--band-btn-ink); }
+.on-band .btn-primary:hover { background: var(--accent); color: #fff; }
+.on-band .btn-ghost { border-color: var(--band-ink); color: var(--band-ink); }
+.on-band .btn-ghost:hover { background: var(--band-ink); color: var(--band); border-color: var(--band-ink); }
+
+.hero { border-bottom: 1px solid var(--line); }
+.page-head { border-bottom: 1px solid var(--line); }
+.approach { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.cta { border-top: 1px solid var(--line); }
+.site-footer { border-top: 1px solid var(--line); }
+.hero-plate { border-left-color: var(--line); }
+@media (max-width: 900px) { .hero-plate { border-top-color: var(--line); } }
+
+/* More air */
+section { padding-block: clamp(112px, 15vw, 208px); }
+.page-body { padding-block: clamp(88px, 12vw, 176px); }
+.hero-copy { gap: 40px; padding-block: clamp(96px, 14vw, 192px); }
+.hero h1 { font-size: clamp(2.5rem, 5.2vw, 4.5rem); }
+.page-head { padding-block: clamp(80px, 11vw, 144px) !important; }
+.section-head { margin-bottom: clamp(56px, 8vw, 112px); }
+.hero-lede, .about-body, .prose { line-height: 1.85; }
+.step { padding-block: 40px 8px; }
+.site-footer { padding-block: clamp(80px, 10vw, 128px) 40px; }
+.cta h2 { margin-bottom: 24px; }
+@media (max-width: 900px) { section { padding-block: clamp(88px, 18vw, 128px); } }
