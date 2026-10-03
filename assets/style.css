@@ -58,7 +58,7 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; }
-  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  html { scroll-padding-top: 84px; }
   body {
     background: var(--bg);
     color: var(--ink);
@@ -287,8 +287,6 @@
   .dlg-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
   .x { position: absolute; top: 10px; right: 10px; width: 44px; height: 44px; background: none; border: 0; cursor: pointer; font-size: 1.6rem; line-height: 1; color: var(--muted); }
 
-  [data-reveal] { transform: translateY(14px); transition: transform .7s cubic-bezier(.2,.7,.2,1); }
-  [data-reveal].in { transform: none; }
 
   @media (max-width: 1040px) {
     .practice-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -324,9 +322,7 @@
     .brand-sub { display: none; }
   }
   @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
     *, *::before, *::after { animation: none !important; transition: none !important; }
-    [data-reveal] { transform: none; }
   }
 
 /* ---------- Multi-page additions ---------- */
